@@ -133,7 +133,7 @@ $temp = new CDate( 0 );
 $day = new CDate();
 $day->setFormat( $df );
 foreach ($tt_data as $row) {
-	$day->setTimestamp( db_dateTime2unix( $row['tt_data_date'] ) );
+	$day->setTime( db_dateTime2unix( $row['tt_data_date'] ) );
 	$day->setTime( 0,0,0 );
 	if ($day->compareTo( $temp )) {
 		$temp = $day;

@@ -1,4 +1,4 @@
-<?php /* $Id: index.php,v 1.3 2003/01/21 05:38:58 eddieajau Exp $ */
+<?php /* $Id: index.php,v 1.4 2003/02/28 20:10:22 kobudo Exp $ */
 // check permissions
 $denyRead = getDenyRead( $m );
 $denyEdit = getDenyEdit( $m );
@@ -16,8 +16,8 @@ $AppUI->savePlace();
  * resolve this issue.
  */
 
-/*require "$root_dir/classdefs/date.php";*/
-require_once( "./classdefs/date.php" );
+// require "$root_dir/classdefs/date.php";
+require_once( "./classes/date.class.php" );
 
 // tab stuff
 if (isset( $_GET['tab'] )) {
@@ -87,17 +87,15 @@ if ($tsld_data['end_date']) {
 	$last_sheet_end = db_dateTime2unix( $tsld_data["end_date"] );
 } else {
 	$time_set = new CDate ();
-	$today_weekday = $time_set -> getWeekday();
-	
+	$today_weekday = $time_set -> getDayOfWeek();
+
 	$rollover_day = '0';
 	$new_start_offset = $rollover_day - $today_weekday;
-	
-	$time_set -> addDays($new_start_offset);
-	
-	$last_sheet_end = $time_set -> getTimestamp();
-}	
-	
 
+	$time_set -> addDays($new_start_offset);
+
+	$last_sheet_end = $time_set -> getTime();
+}   
 
 $filters = array(
 	'my' => 'My TimeSheets',

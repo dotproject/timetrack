@@ -60,8 +60,8 @@ if (!$denyEdit) {
 		<input type="hidden" name="tt_id" value="0">
 		<input type="hidden" name="tt_user_id" value="<?php echo $AppUI->user_id;?>">
 		<input type="hidden" name="tt_active" value="1">
-		<input type="hidden" name="tt_start_date" value="<?php echo $new_start_date->getTimestamp();?>">
-		<input type="hidden" name="tt_end_date" value="<?php echo $new_end_date->getTimestamp();?>">
+		<input type="hidden" name="tt_start_date" value="<?php echo $new_start_date->getTime();?>">
+		<input type="hidden" name="tt_end_date" value="<?php echo $new_end_date->getTime();?>">
 	</form>
 <?php } ?>
 </td>

@@ -231,7 +231,7 @@ function delIt() {
 <tr>
 	<td align="right" nowrap="nowrap">Date:</td>
 	<td>
-		<input type="hidden" name="tt_data_date" value="<?php echo $date->getTimestamp();?>">
+		<input type="hidden" name="tt_data_date" value="<?php echo $date->getTime();?>">
 		<input type="text" name="date" value="<?php echo $date->toString();?>" class="text" disabled="disabled">
 		<a href="#" onClick="popCalendar('date')">
 			<img src="./images/calendar.gif" width="24" height="12" alt="<?php echo $AppUI->_('Calendar');?>" border="0">

@@ -1,10 +1,6 @@
 <?php
 $del = isset($_POST['del']) ? $_POST['del'] : 0;
 
-/*
-OBJECT CODE IS TOTALLY BROKEN
->>>> WIPES OUT RECORDS !!! <<<<
-
 $timesheet = new CTimeSheet();
 if (($msg = $timesheet->bind( $_POST ))) {
 	$AppUI->setMsg( $msg, UI_MSG_ERROR );
@@ -13,7 +9,6 @@ if (($msg = $timesheet->bind( $_POST ))) {
 // convert dates to SQL format first
 $timesheet->tt_start_date = db_unix2DateTime( $timesheet->tt_start_date );
 $timesheet->tt_end_date = db_unix2DateTime( $timesheet->tt_end_date );
-*/
 
 if (isset($sendin)) {
 	// I know it's not OO, but I need it working NOW
@@ -25,8 +20,8 @@ if (isset($sendin)) {
 		$AppUI->setMsg( "Timesheet $timesheet_id sent in", UI_MSG_OK);
 	}
 	$AppUI->redirect();
-} elseif (isset($pmcomment)) {
 
+} elseif (isset($pmcomment)) {
 	if ($reject) {
 		// update timetrack_idx with $timesheet_id and make it $active
 		if ($AppUI->user_type < 5) {

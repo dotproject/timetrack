@@ -8,7 +8,7 @@ if ($denyEdit) {
 	$AppUI->redirect( "m=help&a=access_denied" );
 }
 
-require_once( "$root_dir/classdefs/date.php" );
+require_once $AppUI->getSystemClass('date');
 $df = $AppUI->getPref('SHDATEFORMAT');
 
 //pull data 
@@ -24,7 +24,6 @@ db_loadHash( $sql, $tt_data );
 ##echo '<pre>';print_r($tt_data);echo '</pre>';##
 
 $date = @$tt_data["tt_data_date"] ? CDate::fromDateTime( $tt_data["tt_data_date"] ) : new CDate();
-$date->setFormat( $df );
 
 // get user -> tasks
 $sql = "
@@ -232,7 +231,7 @@ function delIt() {
 	<td align="right" nowrap="nowrap">Date:</td>
 	<td>
 		<input type="hidden" name="tt_data_date" value="<?php echo $date->getTime();?>">
-		<input type="text" name="date" value="<?php echo $date->toString();?>" class="text" disabled="disabled">
+		<input type="text" name="date" value="<?php echo $date->format($df);?>" class="text" disabled="disabled">
 		<a href="#" onClick="popCalendar('date')">
 			<img src="./images/calendar.gif" width="24" height="12" alt="<?php echo $AppUI->_('Calendar');?>" border="0">
 		</a>

@@ -13,7 +13,7 @@ if ($denyRead) {
 }
 $AppUI->savePlace();
 
-require "$root_dir/classdefs/date.php";
+require_once $AppUI->getSystemClass('date');
 $df = $AppUI->getPref( 'SHDATEFORMAT' );
 
 // get timesheet globals
@@ -43,9 +43,7 @@ ORDER BY tt_data_date
 $tt_data = db_loadList ( $psql ); 
 
 $start_date = new CDate( db_dateTime2unix( $tg_data["tt_start_date"] ) );
-$start_date->setFormat( $df );
 $end_date = new CDate( db_dateTime2unix( $tg_data["tt_end_date"] ) );
-$end_date->setFormat( $df );
 
 //echo "[" . $tg_data["tt_start_date"]. "|" . $tg_data["tt_end_date"] . "]<BR>";
 
@@ -88,11 +86,11 @@ function sendIt() {
 		</tr>
 		<tr>
 			<td align="right" nowrap><?php echo $AppUI->_('Start Date');?>:</td>
-			<td class="hilite" width="100%"><?php echo $start_date->toString();?></td>
+			<td class="hilite" width="100%"><?php echo $start_date->format($df);?></td>
 		</tr>
 		<tr>
 			<td align="right" nowrap><?php echo $AppUI->_('End Date');?>:</td>
-			<td class="hilite" width="100%"><?php echo $end_date->toString();?></td>
+			<td class="hilite" width="100%"><?php echo $end_date->format($df);?></td>
 		</tr>
 		</table>
 	</td>
@@ -131,13 +129,12 @@ function sendIt() {
 <?php
 $temp = new CDate( 0 );
 $day = new CDate();
-$day->setFormat( $df );
 foreach ($tt_data as $row) {
 	$day->setTime( db_dateTime2unix( $row['tt_data_date'] ) );
 	$day->setTime( 0,0,0 );
 	if ($day->compareTo( $temp )) {
 		$temp = $day;
-		echo '<tr><td colspan="6"><table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#DFDFDF"><tr><td bgcolor="#DFDFDF"><B>'.$day->toString().'</B></td></tr></table></td></tr>';
+		echo '<tr><td colspan="6"><table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#DFDFDF"><tr><td bgcolor="#DFDFDF"><B>'.$day->format($df).'</B></td></tr></table></td></tr>';
 	}
 ?> 
 <tr> 

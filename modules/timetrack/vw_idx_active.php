@@ -15,8 +15,6 @@ $tt_interval = "1"; // weeks interval for timesheets
 foreach ($timesheets as $row) {
 	$start_date = new CDate( db_dateTime2unix( $row["tt_start_date"] ) );
 	$end_date = new CDate( db_dateTime2unix( $row["tt_end_date"] ) );
-	$start_date -> setFormat( $df );
-	$end_date -> setFormat( $df );
 ?>
 <tr>
 	<td nowrap="nowrap" align="right">
@@ -25,7 +23,7 @@ foreach ($timesheets as $row) {
 	<td nowrap="nowrap">
 	<a href="?m=timetrack&a=view&timesheet_id=<?php echo $row["tt_id"];?>">
 	<?php
-		echo $start_date->toString().' - '.$end_date->toString();
+		echo $start_date->format($df).' - '.$end_date->format($df);
 	?>
 	</a>
 	</td>

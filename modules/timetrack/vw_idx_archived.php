@@ -16,8 +16,6 @@ $df = $AppUI->getPref( 'SHDATEFORMAT' );
 foreach ($timesheets as $row) {
 	$start_date = new CDate( db_dateTime2unix( $row["tt_start_date"] ) );
 	$end_date = new CDate( db_dateTime2unix( $row["tt_end_date"] ) );
-	$start_date -> setFormat( $df );
-	$end_date -> setFormat( $df );
 ?>
 <tr>
 	<td nowrap><?php 
@@ -28,7 +26,7 @@ foreach ($timesheets as $row) {
 	<td nowrap>
 		<A href="./index.php?m=timetrack&a=<?php echo $review ? "review" : "view" ?>&timesheet_id=<?php echo $row["tt_id"];?>&f=<?php echo $f?>">
 		<?php 
-			echo $start_date->toString().'-'.$end_date->toString();
+			echo $start_date->format($df).'-'.$end_date->format($df);
 		?>
 		</a>
 	</td>

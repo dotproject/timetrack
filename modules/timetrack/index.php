@@ -1,4 +1,4 @@
-<?php /* $Id$ */
+<?php /* $Id: index.php,v 1.3 2003/01/21 05:38:58 eddieajau Exp $ */
 // check permissions
 $denyRead = getDenyRead( $m );
 $denyEdit = getDenyEdit( $m );
@@ -8,7 +8,16 @@ if ($denyRead) {
 }
 $AppUI->savePlace();
 
-require "$root_dir/classdefs/date.php";
+/* This appears to be causing problems...
+ * we used to reference $root_dir like this, but for 
+ * dotproject version 1.0 pre-alpha onward we were
+ * using something like $dPconfig['root_dir']...
+ * I suspect modifying the require statement below will 
+ * resolve this issue.
+ */
+
+/*require "$root_dir/classdefs/date.php";*/
+require_once( "./classdefs/date.php" );
 
 // tab stuff
 if (isset( $_GET['tab'] )) {
@@ -118,7 +127,9 @@ $filters = array(
 <?php	
 // echo "tab setting = [$tab]";
 // tabbed information boxes
-$tabBox = new CTabBox( "?m=timetrack", "$root_dir/modules/timetrack/", $tab );
+/* More errors associated with attempts to use deprecated $root_dir variable. */
+/*$tabBox = new CTabBox( "?m=timetrack", "$root_dir/modules/timetrack/", $tab );*/
+$tabBox = new CTabBox( "?m=timetrack", "./modules/timetrack/", $tab );
 $tabBox->add( 'vw_idx_active', 'Active TimeSheets' );
 $tabBox->add( 'vw_idx_archived', 'Submitted TimeSheets' );
 $tabBox->show();

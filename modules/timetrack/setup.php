@@ -1,10 +1,10 @@
-<?php /* $Id: setup.php,v 1.1 2003/01/21 05:43:02 eddieajau Exp $ */
+<?php /* $Id: setup.php,v 1.2 2003/01/24 01:08:35 eddieajau Exp $ */
 /*
 dotProject Module
 
 Name:      TimeTrack
 Directory: timetrack
-Version:   0.2
+Version:   0.3
 Class:     user
 UI Name:   Timetrack
 UI Icon:
@@ -16,7 +16,7 @@ If it is accessed directory it will give a summary of the module parameters.
 // MODULE CONFIGURATION DEFINITION
 $config = array();
 $config['mod_name'] = 'TimeTrack';
-$config['mod_version'] = '0.2';
+$config['mod_version'] = '0.3';
 $config['mod_directory'] = 'timetrack';
 $config['mod_setup_class'] = 'CSetupTimeTrack';
 $config['mod_type'] = 'user';

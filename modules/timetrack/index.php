@@ -1,4 +1,4 @@
-<?php /* $Id: index.php,v 1.4 2003/02/28 20:10:22 kobudo Exp $ */
+<?php /* $Id: index.php,v 1.5 2003/09/04 03:07:12 kripper Exp $ */
 // check permissions
 $denyRead = getDenyRead( $m );
 $denyEdit = getDenyEdit( $m );
@@ -17,7 +17,7 @@ $AppUI->savePlace();
  */
 
 // require "$root_dir/classdefs/date.php";
-require_once( "./classes/date.class.php" );
+require_once $AppUI->getSystemClass('date');
 
 // tab stuff
 if (isset( $_GET['tab'] )) {

@@ -7,12 +7,8 @@ $tt_interval = "1"; // weeks interval for timesheets
 <table width="100%" border="0" bgcolor="#f4efe3" cellpadding="3" cellspacing="1" class="tbl">
 <tr>
 	<td align="right" nowrap="nowrap"></td>
-	<th nowrap="nowrap">
-		<font color="white">Dates Valid</font>
-	</th>
-	<th nowrap="nowrap">
-		<font color="white">Project Manager/Supervisor Notes</font>
-	</th>
+	<th nowrap="nowrap">Dates Valid</th>
+	<th nowrap="nowrap">Project Manager/Supervisor Notes</th>
 </tr>
 
 <?php

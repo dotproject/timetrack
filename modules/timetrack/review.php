@@ -134,23 +134,12 @@ $crumbs["?m=timetrack&timesheet_id=$timesheet_id&f=$f"] = "timesheets list";
 <table width="98%" border="0" bgcolor="#f4efe3" cellpadding="3" cellspacing="1" class="tbl"> 
 <tr> 
 	<td align="right" nowrap="nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> 
-	<th nowrap="nowrap"> 
-		<font color="white">Client</font> 
-	</th> 
-	<th nowrap="nowrap"> 
-		<font color="white">Project</font>
-	</th> 
-	<th nowrap="nowrap"> 
-		<font color="white">Task</font>
-	</th> 
-	<th nowrap="nowrap"> 
-		<font color="white">Description</font>
-	</th> 
-	<th nowrap="nowrap"> 
-		<font color="white">Hours</font>
-	</th> 
+	<th nowrap="nowrap"> Client</th> 
+	<th nowrap="nowrap"> Project</th> 
+	<th nowrap="nowrap"> Task</th> 
+	<th nowrap="nowrap"> Description</font></th> 
+	<th nowrap="nowrap"> Hours</th> 
 </tr> 
- 
 <?php
 $temp = new CDate( 0 );
 $day = new CDate();

@@ -6,14 +6,10 @@ $df = $AppUI->getPref( 'SHDATEFORMAT' );
 <table width="100%" border="0" bgcolor="#f4efe3" cellpadding="3" cellspacing="1" class="tbl">
 <tr>
 	<<?php echo isset($review) ? 'th' : 'td'?> nowrap="nowrap">
-	<?php echo isset($review) ? '<font color="white">Employee</font>' : '' ?>
+	<?php echo isset($review) ? 'Employee' : '' ?>
 	</<?php echo isset($review) ? 'th' : 'td'?>>
-	<th nowrap>
-		<font color="white">Dates Valid</font>
-	</th>
-	<th nowrap>
-		<font color="white">PM Notes</font>
-	</th>
+	<th nowrap>Dates Valid</th>
+	<th nowrap>PM Notes</th>
 </tr>
 
 <?php

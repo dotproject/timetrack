@@ -121,21 +121,11 @@ function sendIt() {
 <table width="98%" border="0" bgcolor="#f4efe3" cellpadding="3" cellspacing="1" class="tbl"> 
 <tr> 
 	<td align="right" nowrap="nowrap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> 
-	<th nowrap="nowrap"> 
-		<font color="white">Client</font> 
-	</th> 
-	<th nowrap="nowrap"> 
-		<font color="white">Project</font>
-	</th> 
-	<th nowrap="nowrap"> 
-		<font color="white">Task</font>
-	</th> 
-	<th nowrap="nowrap"> 
-		<font color="white">Work Description</font>
-	</th> 
-	<th nowrap="nowrap"> 
-		<font color="white">Hours</font>
-	</th> 
+	<th nowrap="nowrap"> Client</th> 
+	<th nowrap="nowrap"> Project</th> 
+	<th nowrap="nowrap"> Task</th> 
+	<th nowrap="nowrap"> Work Description</th> 
+	<th nowrap="nowrap"> Hours</th> 
 </tr> 
  
 <?php

@@ -264,9 +264,9 @@ function delIt() {
 </form>
 * indicates required field
 <script language="javascript">
-changeList('tt_data_project_id', projects, <?php echo @$tt_data['tt_data_client_id'];?>);
-changeList('tt_data_task_id', tasks, <?php echo @$tt_data['tt_data_project_id'];?>);
+changeList('tt_data_project_id', projects, <?php echo @$tt_data['tt_data_client_id'] ? $tt_data['tt_data_client_id'] : 0;?>);
+changeList('tt_data_task_id', tasks, <?php echo @$tt_data['tt_data_project_id'] ? $tt_data['tt_data_project_id'] : 0;?>);
 
-selectList( 'tt_data_project_id', <?php echo @$tt_data['tt_data_project_id'];?> );
-selectList( 'tt_data_task_id', <?php echo @$tt_data['tt_data_task_id'];?> );
+selectList( 'tt_data_project_id', <?php echo @$tt_data['tt_data_project_id'] ? $tt_data['tt_data_project_id'] : 0;?> );
+selectList( 'tt_data_task_id', <?php echo @$tt_data['tt_data_task_id'] ? $tt_data['tt_data_task_id'] : 0;?> );
 </script>

@@ -118,7 +118,7 @@ $filters = array(
 <?php	
 // echo "tab setting = [$tab]";
 // tabbed information boxes
-$tabBox = new CTabBox( "?m=timetrack", "./modules/timetrack", $tab );
+$tabBox = new CTabBox( "?m=timetrack", "$root_dir/modules/timetrack/", $tab );
 $tabBox->add( 'vw_idx_active', 'Active TimeSheets' );
 $tabBox->add( 'vw_idx_archived', 'Submitted TimeSheets' );
 $tabBox->show();

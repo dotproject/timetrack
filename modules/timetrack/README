@@ -1,0 +1,96 @@
+$Id: README,v 1.1 2003/01/09 09:07:49 ckm Exp ckm $
+
+Timetrack - Readme
+==================
+
+  A DotProject time tracking/timesheet module.
+
+  Version .01 alpha - January 2003
+  --------------------------------
+  http://dotmods.sf..net
+
+    Copyright (C) 2002-2003 Chris Maresca <ckm_at_crust_dot_net>
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+  Requirements:
+    PHP3 (>= 3.0.8) or PHP4
+    MySQL (tested with 3.21.x, 3.22.x, 3.23.x and 4.0.x)
+    DotProject CVS as of Jan. 8, 2003
+    a web-browser (doh!)
+
+  Summary:
+    TimeTrack is intended to be a time tracking module for DotProject.
+    It will NOT work in a stand-alone mode, don't even ask.
+	
+	>>>>>>> NOTE THAT THIS IS CONSIDERED _ALPHA_ SOFTWARE <<<<<<<<<<<
+	>>>>>>>>>>>>>>>>>> USE IT AT YOUR OWN RISK <<<<<<<<<<<<<<<<<<<<<<
+	
+    Currently it can:
+      - automatically generate new timesheets
+      - view all of a users timesheets
+      - modify each timesheet entry
+      - automatically pull up user tasks
+      - keep track of timesheet notes
+      - input ad-hoc tasks
+      - submit a timesheet for review
+      - look at static, archived timesheets
+	  - Project manager review tools
+      - Supervisor review tools
+    
+    What's missing:
+      
+      - Reporting of any kinds (you can always print it... ;-)
+
+  Download:
+    You can get the newest version at http://dotmods.sourceforge.net.
+
+  Credits:
+  	Thanks to Andrew Eddie <A.Eddie_at_toowoomba.qld.gov_dot_au> for all the help and code
+    Thanks to the DotProject team for creating the framework.
+	Thanks to the phpMyAdmin team for the README template.
+
+  Installation:
+    Untar/gzip the distro into you dotproject/modules directory.
+	
+    Put functions/timesheet.php in your 
+    [dotproject root]/functions directory 
+	
+    Update your current MySQL dotproject db by using the timetrack.sql file in the 
+    sql directory.
+	
+    Create a link from one of the other dotproject pages to:
+	
+	index.php?m=timetrack
+	
+	Add timetrack to your permissions array in modules/admin/vw_usr_perms.php
+	
+    and you should be ready to go.
+
+  ChangeLog:
+    Now in ChangeLog
+
+  Documentation:
+    Time tracking is basically project/task driven.  You need to be of user type 6 or lower to view 
+	other peoples timesheets.  
+	
+    Each timesheet has rows that reflect a particular task, and the rows can be edited or 
+    deleted.  Note that while you can delete rows, you CANNOT delete a timesheet.  This is done
+    purpose.
+
+  Support:
+    There is NO support.
+
+

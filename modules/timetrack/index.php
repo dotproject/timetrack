@@ -1,4 +1,4 @@
-<?php
+<?php /* $Id$ */
 // check permissions
 $denyRead = getDenyRead( $m );
 $denyEdit = getDenyEdit( $m );
@@ -105,7 +105,7 @@ $filters = array(
 	<td align="right" width="100%">
 	<?php 
 	if ($AppUI->user_type < 7) { ?>
-		<form action="<?PHP echo $REQUEST_URI ?>" method="post" name="pickTimeSheet">
+		<form action="<?PHP echo $_SERVER['REQUEST_URI'];?>" method="post" name="pickTimeSheet">
 		<?php echo arraySelect( $filters, 'f', 'onChange="document.pickTimeSheet.submit()" class="text"', $f ); ?>
 		</form>
 	<?php } ?>
